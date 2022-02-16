@@ -35,9 +35,9 @@ Note: In case this doesn't work, try `rails db:drop` and do the steps all over a
 ### Usage
 - Run `rails s` to expose a local webserver
 - 
-## Authors
+## Author
 
-👤 **Nicu**
+👤 **Eze Promise**
 
 - GitHub: [@codepantherr](https://github.com/codepantherr)
 - Twitter: [@codepantherr](https://twitter.com/codepantherr)
