@@ -1,5 +1,23 @@
-<html>
-  <body>
-    <h1>Show all posts belonging to a single user</h1>
-  </body>
-</html>
+<div class="user_profile">
+
+  <%# User detail head %>
+  <%= render partial: "shared/user_head", locals: {user: @user} %>
+
+  <section class="author_posts">
+    <% @posts.each do |post| %>
+      
+      <%= render partial: "shared/post", locals: {user: @user, post: post} %>
+
+      <article class="author_post_comments">
+        <% post.comments[0..3].each do |comment| %>
+          <p class="comment">
+            <%= "#{comment.user.name}: #{comment.text}" %>
+          </p>
+        <% end %>
+      </article>
+    <% end %>
+    <button class="center">Pagination</button>
+  </section>
+
+  
+</div>

@@ -1,2 +1,15 @@
-<h1>Rails Blog</h1>
-<p>Find me in app/views/pages/hello.html.erb</p>
+<section class="users">
+  <% @users.each do |user| %>
+    <div class="section">
+      <div class="user_container_left">
+        <img src=<%= user.photo %> />
+      </div>
+      <div class="user_container_right">
+        <a href=<%= user_path(user) %>>
+          <h2 class="author"><%= user.name %></h2>
+        </a>
+        <span>Number of posts: <%= user.posts.count %></span>
+      </div>
+    </div>
+  <% end %>
+</section>

@@ -1,1 +1,21 @@
-<h1>Single User</h1>
+<div class="user_profile">
+
+  <%= render partial: "shared/user_head", locals: {user: @user} %>
+
+  <article class="flex-column section">
+    <p class="bold title">Bio</p>
+    <p class="details"><%= @user.bio %></p>
+  </article>
+
+  <section class="author_posts">
+    <% @posts.each do |post| %>
+      <%# show post %>
+      <%= render partial: "shared/post", locals: {user: @user, post: post} %>
+    <% end %>
+    <a href=<%= user_posts_path(@user) %>>
+      <button class="center">See all posts</button>
+    </a>
+  </section>
+
+  
+</div>
