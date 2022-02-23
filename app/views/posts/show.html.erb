@@ -1,7 +1,13 @@
-<html>
-  <body>
-    <h1>Show individual user's posts by id</h1>
-    <p>My post 1</p>
-    <p>My post 2</p>
-  </body>
-</html>
+<section class="post_page">
+  <article class="flex-column author_post">
+    <div class="flex-btw">
+      <a href=<%= user_post_path(@user, @post) %>>
+        <p class="bold"><%= @post.title %></p>
+      </a>
+      <span>Comments: <%= @post.comments.count%>, Likes: <%= @post.likes.count %> </span>
+    </div>
+    <p><%= @post.text.length > 50 ? @post.text[0, 50] + '...' : @post.text  %></p>
+  </article>
+
+  <%= render partial: "shared/comment", locals: {post: @post} %>
+</section>

@@ -12,7 +12,9 @@
       <%# show post %>
       <%= render partial: "shared/post", locals: {user: @user, post: post} %>
     <% end %>
-    <button class="center">See all posts</button>
+    <a href=<%= user_posts_path(@user) %>>
+      <button class="center">See all posts</button>
+    </a>
   </section>
 
   
