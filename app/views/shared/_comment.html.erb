@@ -1,0 +1,7 @@
+<article class="author_post_comments">
+  <% post.comments.each do |comment| %>
+    <p class="comment">
+      <%= "#{comment.user.name}: #{comment.text}" %>
+    </p>
+  <% end %>
+</article>
