@@ -1,1 +1,31 @@
-<h1>Single User</h1>
+<div class="user_profile">
+  <div class="section">
+    <div class="user_container_left">
+      <img src=<%= @user.photo %> />
+    </div>
+    <div class="user_container_right">
+      <a href=<%= user_path(@user) %>>
+        <h2 class="author"><%= @user.name %></h2>
+      </a>
+      <span>Number of posts: <%= @user.posts.count %></span>
+    </div>
+  </div>
+
+  <article class="flex-column section">
+    <p class="bold title">Bio</p>
+    <p class="details"><%= @user.bio %></p>
+  </article>
+
+  <section class="author_posts">
+    <% @posts.each do |post| %>
+      <article class="flex-column author_post">
+        <p class="bold"><%= post.title %></p>
+        <p><%= post.text.length > 50 ? post.text[0, 50] + '...' : post.text  %></p>
+        <span>Comments: <%= post.comments.count%>, Likes: <%= post.likes.count %> </span>
+      </article>
+    <% end %>
+    <button class="center">See all posts</button>
+  </section>
+
+  
+</div>
