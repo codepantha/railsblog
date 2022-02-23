@@ -1,15 +1,88 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.main {
+  padding: 10px;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 90%;
+  margin-bottom: 20px;
+  margin: 20px auto;
+}
+
+.user_container_left {
+  flex-basis: 100px;
+  height: 100%;
+  background-color: #e3e3e3;
+  overflow-y: hidden;
+}
+
+.user_container_left img {
+  width: 100px;
+  border-radius: 4px;
+  height: 100px;  
+  object-fit: cover;
+}
+
+.user_container_right {
+  flex-basis: calc(100% - 10%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  background-color: #e3e3e3;
+}
+
+.user_container_right a {
+  text-decoration: none;
+  color: midnightblue;
+}
+
+.user_container_right .author {
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.user_container_right span {
+  align-self: flex-end;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: #ececec;
+  padding: 10px;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.author_post {
+  height: 100px;
+  width: 90%;
+  margin-bottom: 20px;
+  margin: 20px auto;
+}
+
+.author_post span {
+  align-self: flex-end;
+}
+
+.center {
+  margin: 0 auto;
+}
