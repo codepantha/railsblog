@@ -1,0 +1,16 @@
+<div class="new_post_wrapper">
+  <%= form_with(model: @post, :html => {:class => 'new_post'}, url: user_posts_path, method: :post, local: true) do |f| %>
+    <div class="form-group">
+      <%= f.label :title, class: 'label' %><br>
+      <%= f.text_field :title, class: 'field' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :text, class: 'label' %><br>
+      <%= f.text_area :text, class: 'field' %>
+    </div>
+
+    <%= f.submit "Add Post", class: 'submit' %>
+
+  <% end %>
+</div>
