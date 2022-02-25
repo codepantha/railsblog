@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(user: @user, post: @post, text: params[:comment][:text])
     if @comment.save
       redirect_to user_post_url({ user_id: @user.id, id: @post.id })
-      flash[:success] = 'Post created successfully'
+      flash[:success] = 'Comment created successfully'
     else
       render :new, flash: { error: 'Something went wrong with your post' }
     end
