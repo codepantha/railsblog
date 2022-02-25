@@ -116,3 +116,33 @@
 .comment {
   padding: 4px;
 }
+
+.new_post_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.new_post {
+  width: 40%;
+}
+
+.label {
+  margin-bottom: 7px;
+}
+
+.field {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid silver;
+  border-radius: 4px;
+  margin-bottom: 14px;
+  resize: none;
+}
+
+.submit {
+  padding: 20px 0;
+  width: 100px;
+}
