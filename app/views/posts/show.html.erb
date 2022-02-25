@@ -10,4 +10,10 @@
   </article>
 
   <%= render partial: "shared/comment", locals: {post: @post} %>
+
+  <div class="user_reaction">
+    <a href=<%= new_user_post_comment_path(@user, @post) %> class="comment_link">
+      Comment
+    </a>
+  </div>
 </section>

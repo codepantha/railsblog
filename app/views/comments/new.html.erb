@@ -1,0 +1,12 @@
+<div class="new_post_wrapper">
+  <%= form_with(model: @comment, :html => {:class => 'new_post'}, url: user_post_comments_path, method: :post, local: true) do |f| %>
+
+    <div class="form-group">
+      <%= f.label :text, class: 'label' %><br>
+      <%= f.text_area :text, class: 'field' %>
+    </div>
+
+    <%= f.submit "Comment", class: 'submit' %>
+
+  <% end %>
+</div>
