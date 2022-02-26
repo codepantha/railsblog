@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     @post.likes_counter = 0
 
     if @post.valid?
-      @post.save
+      @post.save!
       redirect_to user_post_url({ user_id: @user.id, id: @post.id })
       flash[:success] = 'Post created successfully'
     else
