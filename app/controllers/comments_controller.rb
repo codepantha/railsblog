@@ -15,7 +15,10 @@ class CommentsController < ApplicationController
       redirect_to user_post_url({ user_id: @user.id, id: @post.id })
       flash[:success] = 'Comment created successfully'
     else
-      render :new, flash: { error: 'Something went wrong with your post' }
+      errors = @post.errors
+      # get the full message of the error
+      flash[:notice] = errors.full_messages.join("\n")
+      redirect_back(fallback_location: root_path)
     end
   end
 
