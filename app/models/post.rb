@@ -3,7 +3,9 @@ class Post < ApplicationRecord
   has_many :likes
   has_many :comments
 
-  validates :title, presence: { message: 'Title is required' }
+  after_save :update_user_posts_counter
+
+  validates :title, presence: true
   validates :title, length: { maximum: 250, message: 'Title must not exceed 250 characters' }
   validates :comments_counter,
             numericality: { only_integer: true, greater_than_or_equal_to: 0,
@@ -12,8 +14,10 @@ class Post < ApplicationRecord
             numericality: { only_integer: true, greater_than_or_equal_to: 0,
                             message: 'likes_counter must be greater than or equal to 0' }
 
+  private
+
   # update a user's posts_counter
-  def self.update_user_posts_counter(user)
+  def update_user_posts_counter
     user.update(posts_counter: user.posts.count)
   end
 

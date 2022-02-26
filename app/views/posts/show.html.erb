@@ -4,7 +4,7 @@
       <a href=<%= user_post_path(@user, @post) %>>
         <p class="bold"><%= @post.title %></p>
       </a>
-      <span>Comments: <%= @post.comments.count%>, Likes: <%= @post.likes.count %> </span>
+      <span>Comments: <%= @post.comments.count%>, Likes: <%= @post.likes_counter %> </span>
     </div>
     <p><%= @post.text.length > 50 ? @post.text[0, 50] + '...' : @post.text  %></p>
   </article>
