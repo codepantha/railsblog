@@ -7,5 +7,17 @@
       <h2 class="author"><%= @user.name %></h2>
     </a>
     <span>Number of posts: <%= @user.posts.count %></span>
+
+    
+  <%= form_with url: '/users/sign_out', method: :delete do |f| %>
+    <%= f.submit "Log out", class: 'submit' %>
+  <% end %>
+</div>
+
+
+
+
+
+
   </div>
 </div>
