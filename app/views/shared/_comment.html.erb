@@ -1,6 +1,6 @@
 <article class="author_post_comments">
   <% post.comments.each do |comment| %>
-    <p class="comment">
+    <p class="comment" id="comment">
       <%= "#{comment.user.name}: #{comment.text}" %>
     </p>
   <% end %>

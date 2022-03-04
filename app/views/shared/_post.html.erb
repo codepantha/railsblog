@@ -1,6 +1,6 @@
 <article class="flex-column author_post">
   <a href=<%= user_post_path(user, post) %>>
-    <p class="bold"><%= post.title %></p>
+    <p class="bold" id="post-title"><%= post.title %></p>
   </a>
   <p><%= post.text.length > 50 ? post.text[0, 50] + '...' : post.text  %></p>
   <span>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </span>

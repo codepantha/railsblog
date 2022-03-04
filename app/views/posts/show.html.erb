@@ -2,7 +2,7 @@
   <article class="flex-column author_post">
     <div class="flex-btw">
       <a href=<%= user_post_path(@user, @post) %>>
-        <p class="bold"><%= @post.title %></p>
+        <p class="bold" id="post-title"><%= "#{@post.user.name}: #{@post.title}" %></p>
       </a>
       <span>Comments: <%= @post.comments.count%>, Likes: <%= @post.likes_counter %> </span>
     </div>

@@ -6,7 +6,7 @@
     <a href=<%= user_path(@user) %>>
       <h2 class="author"><%= @user.name %></h2>
     </a>
-    <span>Number of posts: <%= @user.posts.count %></span>
+    <span id="posts_num">Number of posts: <%= @user.posts_counter %></span>
 
     
   <%= form_with url: '/users/sign_out', method: :delete do |f| %>

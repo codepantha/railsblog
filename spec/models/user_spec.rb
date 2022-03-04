@@ -2,15 +2,10 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   subject do
-    User.new(
-      name: 'Codepantherr',
-      photo: 'http://unsplash.com/codepantherr',
-      bio: 'badass dev',
-      posts_counter: 0
-    )
+    User.create(name: 'Prom', bio: 'This is my life',
+                photo: 'https://avatars.githubusercontent.com/u/46839548?v=4',
+                email: 'prom@test.com', password: '123456')
   end
-
-  before { subject.save }
 
   it 'name is required' do
     subject.name = nil
