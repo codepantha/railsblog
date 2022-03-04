@@ -7,8 +7,6 @@ RSpec.describe User, type: :model do
                 email: 'prom@test.com', password: '123456')
   end
 
-  # before { subject.save }
-
   it 'name is required' do
     subject.name = nil
     expect(subject).to_not be_valid
