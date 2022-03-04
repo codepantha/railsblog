@@ -5,10 +5,12 @@ describe 'User index page', type: :feature do
   context 'when successful' do
     before :each do
       @user1 = User.new(name: 'Rafael', bio: 'Rafael bio',
-                        photo: 'https://avatars.githubusercontent.com/u/53021807?v=4', email: 'rafael@test.com', password: '123456')
+                        photo: 'https://avatars.githubusercontent.com/u/53021807?v=4',
+                        email: 'rafael@test.com', password: '123456')
       @user1.save
       user2 = User.new(name: 'Promise', bio: 'Promise bio',
-                       photo: 'https://avatars.githubusercontent.com/u/46839548?v=4', email: 'promise@test.com', password: '123456')
+                       photo: 'https://avatars.githubusercontent.com/u/46839548?v=4',
+                       email: 'promise@test.com', password: '123456')
       user2.save
     end
 

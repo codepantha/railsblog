@@ -4,13 +4,13 @@ require 'capybara/rspec'
 describe 'User Posts Index Page', type: :feature do
   before :each do
     @user = User.create(name: 'Prom', bio: 'This is my life',
-      photo: 'https://avatars.githubusercontent.com/u/53021807?v=4',
-      email: 'rafael@test.com', password: '123456',
-      confirmed_at: '2022-03-02 22:25:13.71382')
-      
-      @post = @user.posts.create(title: 'The test', text: 'The only test', comments_counter: 0, likes_counter: 0)
-      @comment = Comment.create(user: @user, post: @post, 'text': 'Nice post')
-      
+                        photo: 'https://avatars.githubusercontent.com/u/53021807?v=4',
+                        email: 'rafael@test.com', password: '123456',
+                        confirmed_at: '2022-03-02 22:25:13.71382')
+
+    @post = @user.posts.create(title: 'The test', text: 'The only test', comments_counter: 0, likes_counter: 0)
+    @comment = Comment.create(user: @user, post: @post, text: 'Nice post')
+
     visit user_posts_path(@user)
   end
 
@@ -53,7 +53,7 @@ describe 'User Posts Index Page', type: :feature do
   end
 
   it 'redirects me to the post show page when I click on a post' do
-    click_link "#{@post.title}"
+    click_link @post.title.to_s
     expect(current_path).to eq(user_post_path(@user, @post))
   end
 end

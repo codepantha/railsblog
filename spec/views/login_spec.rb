@@ -1,10 +1,11 @@
+# rubocop:disable Metrics/BlockLength
 require 'rails_helper'
 require 'capybara/rspec'
 
 describe 'Sign In', type: :feature do
-  context 'when successfull' do
+  context 'when successful' do
     before :each do
-      user = User.new(name: 'Rafaeñ', bio: 'Rafael bio', email: 'email@test.com', password: '123456',
+      user = User.new(name: 'Rafael', bio: 'Rafael bio', email: 'email@test.com', password: '123456',
                       confirmed_at: '2022-03-02 22:25:13.71382')
       user.save
     end
@@ -27,7 +28,7 @@ describe 'Sign In', type: :feature do
       expect(page).to have_content 'Invalid Email or password.'
     end
 
-    it 'When I click the submit button after filling in the username and the password with incorrect data, I get a detailed error.' do
+    it 'Incorrect login details gives a detailed error.' do
       visit 'users/sign_in'
       within('form') do
         fill_in 'user[email]', with: 'incorrect@incorrect'
@@ -37,7 +38,7 @@ describe 'Sign In', type: :feature do
       expect(page).to have_content 'Invalid Email or password.'
     end
 
-    it 'When I click the submit button after filling in the username and the password with correct data, I am redirected to the root page.' do
+    it 'Correct login details redirects to the root page.' do
       visit 'users/sign_in'
       within('form') do
         fill_in 'user[email]', with: 'email@test.com'
@@ -50,3 +51,4 @@ describe 'Sign In', type: :feature do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
