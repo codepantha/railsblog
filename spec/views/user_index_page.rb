@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'capybara/rspec'
 
-describe 'User page', type: :feature do
+describe 'User index page', type: :feature do
   context 'when successful' do
     before :each do
       @user1 = User.new(name: 'Rafael', bio: 'Rafael bio',
