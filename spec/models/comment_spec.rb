@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
   let(:user) do
-    User.create!(name: 'Ocean Hart', photo: 'http://unsplash.com', bio: 'Musician', posts_counter: 0)
+    User.create!(name: 'Ocean Hart', photo: 'http://unsplash.com', email: 'prom@gmail.com', password: '123456',
+                 bio: 'Musician', posts_counter: 0)
   end
 
   let(:post) do
